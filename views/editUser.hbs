@@ -1,0 +1,35 @@
+<div class="container mb-3">
+    <h1 class="text-center">Edit Profile</h1>
+    <div class="row mt-3">
+        <div class="col-md-6 mx-auto">
+
+            {{> messages}}
+            <form method="POST" action="/user/update/{{user.id}}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputFirstName">First Name</label>
+                    <input type="text" class="form-control" name="first_name" id="exampleInputFirstName" value="{{user.firstName}}">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputLastName">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" id="exampleInputLastName" value="{{user.lastName}}">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" value="{{user.email}}"
+                        aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                 <div class="form-group">
+                    <label for="exampleInputEmail1">Profile Image</label>
+                    <img src="{{user.profileImage}}" alt="">
+                    <input type="file" name="profile_image" class="form-control-file" id="exampleInputEmail1" placeholder="Enter Image">
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</div>
